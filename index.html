@@ -3,67 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="./asset/iamge-icon.svg" />
+    <title>Image Quest</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>IMAGE SEARCH APP</h1>
-    <script src="script.js"></script>
-    <form action="">
-      <input type="text" id="search-input" placeholder="Search here" />
-      <button id="search-button">Search</button>
-    </form>
-    <div class="search-results">
-      <div class="search-result">
-        <img
-          src="https://images.unsplash.com/photo-1682695795798-1b31ea040caf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
-        />
-        <a
-          href="https://images.unsplash.com/photo-1689265908452-4a1ee2dc366f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
-          target="_blank"
-          alt="Moutains under the sky"
-        ></a>
-        <a
-          href="https://images.unsplash.com/photo-1689265908452-4a1ee2dc366f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
-          target="_blank"
-          alt="Moutains under the sky"
-          >Moutains under the sky</a
-        >
+    <header class="header sticky" id="nav-header">
+      <div class="header_icon">
+        <h1 class="title">IMAGE SEARCH APP</h1>
+        <p class="subtitle">Unleashing Visual Discoveries</p>
       </div>
-      <div class="search-result">
+      <div class="search-container">
         <img
-          src="https://images.unsplash.com/photo-1682695795798-1b31ea040caf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
+          src="./asset/search-icon.svg"
+          class="search-icon"
+          alt="search-icon"
         />
-        <a
-          href="https://images.unsplash.com/photo-1689265908452-4a1ee2dc366f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
-          target="_blank"
-          alt="Moutains under the sky"
-        ></a>
-        <a
-          href="https://images.unsplash.com/photo-1689265908452-4a1ee2dc366f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
-          target="_blank"
-          alt="Moutains under the sky"
-          >Moutains under the sky</a
-        >
+        <form class="search-form" id="search">
+          <input type="text" id="search-input" placeholder="Search images" />
+          <button type="submit">Search</button>
+        </form>
       </div>
-      <div class="search-result">
-        <img
-          src="https://images.unsplash.com/photo-1682695795798-1b31ea040caf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
-        />
-        <a
-          href="https://images.unsplash.com/photo-1689265908452-4a1ee2dc366f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
-          target="_blank"
-          alt="Moutains under the sky"
-        ></a>
-        <a
-          href="https://images.unsplash.com/photo-1689265908452-4a1ee2dc366f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
-          target="_blank"
-          alt="Moutains under the sky"
-          >Moutains under the sky</a
-        >
+    </header>
+
+    <main>
+      <section class="gallery">
+        <ul class="images" id="images-container"></ul>
+        <div class="util-container">
+          <div class="loader" id="loader"></div>
+          <p class="no-result" id="no-result">No Image found</p>
+          <button id="load-more" class="load-btn">Show More</button>
+        </div>
+      </section>
+
+      <!-- PREVIEW -->
+      <div id="image-preview-modal" class="preview-modal">
+        <span id="close-btn" class="close-btn">&times;</span>
+        <img id="preview-image" src="" alt="Image Preview" />
       </div>
-    </div>
-    <button id="show-more-button">Show-more</button>
+    </main>
+
     <script src="script.js"></script>
   </body>
 </html>
